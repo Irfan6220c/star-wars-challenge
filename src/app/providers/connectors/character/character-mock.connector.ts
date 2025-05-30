@@ -19,7 +19,6 @@ export class CharacterMockConnector implements CharacterConnector {
   }
 
   getPlanet(id: string): Observable<any> {
-    // Not supported in new API, implement if needed
     return of({}).pipe(delay(500));
   }
 

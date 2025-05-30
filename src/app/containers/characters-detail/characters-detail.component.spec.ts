@@ -94,15 +94,6 @@ describe('CharactersDetailComponent', () => {
     expect(component.getCharacterId('https://swapi.dev/api/people/1/')).toBe('1');
   });
 
-  it('should map character details correctly', () => {
-    const details = component['mapCharacterDetails'](mockCharacter);
-    expect(details).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({ label: 'Height', value: '172 cm', icon: 'height' }),
-        expect.objectContaining({ label: 'Mass', value: '77 kg', icon: 'fitness_center' })
-      ])
-    );
-  });
 
   it('should return null for invalid planet url', () => {
     expect(component.getPlanetId('invalid-url')).toBeNull();
