@@ -1,0 +1,51 @@
+<div class="character-detail-container" *ngIf="character as char">
+  <mat-card class="character-card">
+    <mat-card-header>
+      <mat-card-title>{{ char.name }}</mat-card-title>
+      <mat-card-subtitle>Character Details</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="character-detail-content">
+        <div class="character-details">
+          <mat-list>
+            <ng-container *ngFor="let detail of characterDetails; let last = last">
+              <mat-list-item>
+                <span matLine class="detail-label">{{ detail.label }}</span>
+                <span matLine class="detail-value">{{ detail.value }}</span>
+              </mat-list-item>
+              
+              <mat-divider *ngIf="!last"></mat-divider>
+            </ng-container>
+
+            <mat-list-item>
+              <span matLine>Homeworld</span>
+              <span matLine class="secondary">
+                <a
+                  mat-stroked-button
+                  color="accent"
+                  [routerLink]="['/planet-detail', getPlanetId(char.homeworld)]"
+                  [queryParams]="{ characterId: getCharacterId(char.url) }"
+                >
+                  <mat-icon>travel_explore</mat-icon>
+                  View Planet
+                </a>
+              </span>
+            </mat-list-item>
+          </mat-list>
+
+          <div class="button-row">
+            <button mat-raised-button color="primary" routerLink="/">
+              <mat-icon>arrow_back</mat-icon>
+              Back to List
+            </button>
+          </div>
+        </div>
+
+        <div class="character-image">
+          <img [src]="getAkababImage(char.name)" [alt]="char.name" />
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

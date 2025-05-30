@@ -1,0 +1,28 @@
+<div class="container">
+  <mat-toolbar color="primary">
+    <span>Star Wars Characters</span>
+  </mat-toolbar>
+
+  <div class="card-grid">
+    <mat-card class="character-card" *ngFor="let character of characterStore.characters(currentPage)()" (click)="navigateToDetails(character)">
+      <img mat-card-image [src]="getAkababImage(character.name) || 'assets/placeholder.png'" [alt]="character.name" />
+      <mat-card-title>{{ character.name }}</mat-card-title>
+      <mat-card-content>
+        <div class="character-description">
+          <div><strong>Gender:</strong> {{ character.gender }}</div>
+          <div><strong>Birth Year:</strong> {{ character.birth_year }}</div>
+          <div><strong>Height:</strong> {{ character.height }} cm</div>
+          <div><strong>Mass:</strong> {{ character.mass }} kg</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <mat-paginator
+    [length]="characterStore.totalRecords()"
+    [pageSize]="10"
+    [pageIndex]="currentPage - 1"
+    (page)="onPageChange($event.pageIndex + 1)"
+    aria-label="Select page">
+  </mat-paginator>
+</div>

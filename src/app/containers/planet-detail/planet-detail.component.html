@@ -1,0 +1,73 @@
+<div class="container" *ngIf="planet">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ planet.name }}</mat-card-title>
+      <mat-card-subtitle>Planet Details</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <span matListItemTitle>Climate</span>
+          <span matListItemLine>{{ planet.climate }}</span>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+          <span matListItemTitle>Terrain</span>
+          <span matListItemLine>{{ planet.terrain }}</span>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+          <span matListItemTitle>Population</span>
+          <span matListItemLine>{{ planet.population }}</span>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+          <span matListItemTitle>Diameter</span>
+          <span matListItemLine>{{ planet.diameter }} km</span>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+          <span matListItemTitle>Rotation Period</span>
+          <span matListItemLine>{{ planet.rotation_period }} hours</span>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+          <span matListItemTitle>Orbital Period</span>
+          <span matListItemLine>{{ planet.orbital_period }} days</span>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+          <span matListItemTitle>Gravity</span>
+          <span matListItemLine>{{ planet.gravity }}</span>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+          <span matListItemTitle>Surface Water</span>
+          <span matListItemLine>{{ planet.surface_water }}%</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="goBackToCharacter()">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Character
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
