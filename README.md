@@ -36,7 +36,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Managed state to avoid unnecessary API calls for previously visited views.
 - Standalone components without NgModules.
 - Jest framework used for minimal unit test coverage.
-- Cypress for minimal e2e tests.
 - Responsive and friendly UX/UI.
 
 ## Project status
